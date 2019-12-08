@@ -1,31 +1,31 @@
 {
-  "name": "tutuserve",
-  "version": "1.0.0",
-  "description": "> 很调皮的开发日志，记录以下自己的开发历程",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "lib": "lib",
-    "test": "tests"
-  },
-  "dependencies": {
-    "jsonwebtoken": "^8.5.1",
-    "koa": "^2.10.0",
-    "koa-body": "^4.1.1",
-    "koa-logger": "^3.2.1",
-    "koa-router": "^7.4.0",
-    "koa-static": "^5.0.0",
-    "log4js": "^5.2.2",
-    "mocha": "^6.2.1",
-    "mysql": "^2.17.1",
-    "node-schedule": "^1.3.2",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "tutuserve",
+    "version": "1.0.0",
+    "description": "> 很调皮的开发日志，记录以下自己的开发历程",
+    "main": "./index.js",
+    "directories": {
+        "doc": "docs",
+        "lib": "lib",
+        "test": "tests"
+    },
+    "dependencies": {
+        "jsonwebtoken": "^8.5.1",
+        "koa": "^2.10.0",
+        "koa-body": "^4.1.1",
+        "koa-logger": "^3.2.1",
+        "koa-router": "^7.4.0",
+        "koa-static": "^5.0.0",
+        "log4js": "^5.2.2",
+        "mocha": "^6.2.1",
+        "mysql": "^2.17.1",
+        "node-schedule": "^1.3.2",
+        "vue": "^2.6.10"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "node index.js"
+    },
+    "author": "",
+    "license": "ISC"
 }

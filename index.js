@@ -6,4 +6,4 @@
  * 难受.....刚刚写完一个后端的整体框架，结果代码弄丢了还没提交git，现在开始每天一提交了
  */
 
-const app = require("./lib/app");
+const app = require('./lib/app');
