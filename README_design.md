@@ -66,3 +66,23 @@
 - return
   - type:json
   - data:图片的信息
+
+### `/a/get/home/keyworld`
+
+- type
+  - get
+- argument
+  - kw: 关键字
+  - count: 切片偏移
+  - len：分页长度
+- return
+
+```js
+return {
+    code: 0,  // 状态码
+    msg: 'ok', // 状态信息/错误信息
+    len: 30,  // 返回数据长度
+    total: 18000,  // 总计
+    data:[{},{}]  // 数据载荷
+}
+```
