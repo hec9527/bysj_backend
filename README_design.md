@@ -79,10 +79,27 @@
 
 ```js
 return {
-    code: 0,  // 状态码
+    code: 0,  // 状态码 0 正常  1 完结
     msg: 'ok', // 状态信息/错误信息
     len: 30,  // 返回数据长度
     total: 18000,  // 总计
     data:[{},{}]  // 数据载荷
+}
+```
+
+### `/a/get/imageCategory`
+
+- type
+  - get
+- argument
+  - 无
+- return
+
+```js
+return {
+    code: 0,   // 返回状态
+    msg: "ok",  // 返回信息
+    len: 18,  // 数据长度
+    data:[...]  // 数据有效荷载
 }
 ```
