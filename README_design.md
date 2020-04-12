@@ -103,3 +103,23 @@ return {
     data:[...]  // 数据有效荷载
 }
 ```
+
+### `/a/get/getImageByCategory`
+
+- type
+  - get
+- argument
+  - category 必须
+  - count
+  - len
+- return
+
+```js
+return {
+    code: 0,
+    msg: "ok",
+    len: 30, // 返回的数据长度
+    data: [], // 返回的数据
+    total: 30, // 所有数据
+}
+```
