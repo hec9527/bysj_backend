@@ -123,3 +123,20 @@ return {
     total: 30, // 所有数据
 }
 ```
+
+### '/get/getBingDaily'
+
+- type
+  - get
+- argument
+  - 无
+- return
+
+```js
+return {
+    code: 0,
+    msg: 'ok',
+    len: 7,
+    data: []
+}
+```
