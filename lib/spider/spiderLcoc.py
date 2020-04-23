@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding=utf-8 -*-
 # coding=utf-8
-
 '''
     @author    hec9527
     @time      2020-3-30
@@ -35,7 +34,7 @@ class SpiderLcoc(object):
         res = requests.get(self.url_getType).text
         res = json.loads(res)
         # 请求正常
-        if(res.get('errno', 0) == '0' and res['data'][0] != []):
+        if (res.get('errno', 0) == '0' and res['data'][0] != []):
             print(res['data'])
             return
             self.types.extend(res['data'])
@@ -52,10 +51,11 @@ class SpiderLcoc(object):
             # 计数当前分类计数
             start = 0
             while True:
-                url = self.url_getWallpaper.replace('@type', str(Id)).replace('@start', str(start))
+                url = self.url_getWallpaper.replace('@type', str(Id)).replace(
+                    '@start', str(start))
                 res = requests.get(url).text
                 res = json.loads(res)
-                if(res.get('errno', 0) == '0'):
+                if (res.get('errno', 0) == '0'):
                     total = res['total']
                     data = res['data']
                     # print(total,data)

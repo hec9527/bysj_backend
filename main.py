@@ -8,15 +8,15 @@
 """
 
 # 日志模块
-from lib.logger import logger
+from lib.spider.logger import logger
 # 360壁纸爬取模块
-from lib.spider360 import Spider360
+from lib.spider.spider360 import Spider360
 # 蓝调壁纸
 # from lib.spiderLcoc import SpiderLcoc
 # 必应每日图片
-from lib.Spiderbiying import SpiderBiYing
+from lib.spider.Spiderbiying import SpiderBiYing
 # 金山词典
-from lib.SpiderJinshan import SpiderJinShan
+from lib.spider.SpiderJinshan import SpiderJinShan
 
 
 class Spider(object):
@@ -24,7 +24,7 @@ class Spider(object):
         logger.info('爬虫模块启动...')
         # 相关爬虫模块
         # self.list_lib = [Spider360]
-        self.list_lib = [SpiderJinShan]
+        self.list_lib = [SpiderJinShan, SpiderBiYing, Spider360]
         # 爬虫进程
         self.list_process = []
         # 启动爬虫进程

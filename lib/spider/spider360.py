@@ -93,7 +93,8 @@ class Spider360(object):
         totalALl, fetchedAll = 0, 0
         if isinstance(data, list) and len(data) > 0:
             for cate in data:
-                cid, category, start, count, fetched, total = cate['id'], cate['name'], 0, 150, 0, 0
+                cid, category, start, count, fetched, total = cate['id'], cate[
+                    'name'], 0, 150, 0, 0
                 while True:
                     # cid   start    count
                     url = self.API_HOST + self.API_ARG.replace(
@@ -111,13 +112,16 @@ class Spider360(object):
                             url = sub(r'__\d\d', "__100", item['url'])
                             tag = item['tag']
                             reso = item['resolution'].replace("*", "x")
-                            result = self.dao.insertImage(url, tag, reso, category)
+                            result = self.dao.insertImage(
+                                url, tag, reso, category)
                             if result is None:
                                 fetched += 1
-                            if(fetched >= total):
+                            if (fetched >= total):
                                 totalALl += total
                                 fetchedAll += fetched
-                                print(f"fetched ---> 分类：{category}  总计：{fetched}")
+                                print(
+                                    f"fetched ---> 分类：{category}  总计：{fetched}"
+                                )
                                 break
                         else:
                             continue

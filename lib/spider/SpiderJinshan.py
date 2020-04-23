@@ -70,9 +70,12 @@ class SpiderJinShan(object):
     # 获取最近7天的日期字符串
     def dayDateRange(self):
         for i in range(0, 100):
-            yesterday = (date.today() + timedelta(days=-i)).strftime("%Y-%m-%d")  # 昨天日期
+            yesterday = (date.today() + timedelta(days=-i)).strftime(
+                "%Y-%m-%d")  # 昨天日期
             self.DATE_LIS.append(yesterday)
 
     # 模块运行结束
     def __del__(self):
-        logger.info(f'SpiderJinShan爬取进程运行结束, 新获取数据:{self.TOTAL}, 过滤已存在：{self.TOTAL_EXIST}')
+        logger.info(
+            f'SpiderJinShan爬取进程运行结束, 新获取数据:{self.TOTAL}, 过滤已存在：{self.TOTAL_EXIST}'
+        )

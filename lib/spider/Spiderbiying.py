@@ -73,7 +73,8 @@ class SpiderBiYing(object):
         img_date = self.findDate(text)
         img_title = self.findTitle(text)
         img_title = img_title.replace("'", '')
-        if img_date is not None and self.DAO.selectFromBiying(img_date) is None:
+        if img_date is not None and self.DAO.selectFromBiying(
+                img_date) is None:
             self.DAO.insertBiying(img_url, img_date, img_title)
             self.TOTAL += 1
             print(f"find image count: {self.TOTAL}", end='\r')
