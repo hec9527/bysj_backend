@@ -11,6 +11,7 @@
 import os
 import json
 import pymysql.cursors
+from lib.spider.logger import logger
 from sys import exit
 
 
@@ -19,7 +20,7 @@ class DBS:
         logger.info("数据库模块启动...")
         # load config
         config_path = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "../config/config.json"))
+            os.path.join(os.path.dirname(__file__), "../../config/config.json"))
         # load config
         with open(config_path) as file:
             self.config = json.load(file)
@@ -78,11 +79,3 @@ class DBS:
     def __del__(self):
         self.cnn.close()
         logger.info('数据库连接关闭')
-
-
-# 开发测试
-if __name__ == "__main__":
-    db = DBS()
-    from lib.logger import logger
-else:
-    from lib.logger import logger

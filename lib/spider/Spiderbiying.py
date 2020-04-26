@@ -26,8 +26,8 @@
 import requests
 import re
 from time import sleep
-from lib.dao import DBS
-from lib.logger import logger
+from lib.spider.dao import DBS
+from lib.spider.logger import logger
 
 
 class SpiderBiYing(object):
@@ -41,7 +41,7 @@ class SpiderBiYing(object):
         self.API_HOST = 'https://bing.ioliu.cn/'
         self.API_PAGE = 1
         self.API_PAGEALL = None
-        self.INTERVAL = 0.5  # 每次请求的间隔时间
+        self.INTERVAL = 1  # 每次请求的间隔时间
         self.TOTAL = 0
         self.TOTAL_EXIST = 0
         self.start()
@@ -56,18 +56,18 @@ class SpiderBiYing(object):
         for page in range(1, int(self.API_PAGEALL) + 1):
             url = self.API_HOST + f"?p={page}"
             res = requests.get(url, headers=self.HEADER)
-            self.parseLinks(res.text)
+            self.parseLinks(res.text, page)
 
-    def parseLinks(self, text):
+    def parseLinks(self, text, page):
         sleep(self.INTERVAL)
         pattern = re.compile(r'<a class="mark" href="(.*?)"></a>')
         results = pattern.findall(text)
         for link in results:
             url = self.API_HOST + link
             res = requests.get(url, headers=self.HEADER)
-            self.parsePages(res.text)
+            self.parsePages(res.text, page)
 
-    def parsePages(self, text):
+    def parsePages(self, text, page):
         sleep(self.INTERVAL)
         img_url = self.findImage(text)
         img_date = self.findDate(text)
@@ -77,9 +77,10 @@ class SpiderBiYing(object):
                 img_date) is None:
             self.DAO.insertBiying(img_url, img_date, img_title)
             self.TOTAL += 1
-            print(f"find image count: {self.TOTAL}", end='\r')
+            print(f"find image count: {self.TOTAL}  页数:{page}/{self.API_PAGEALL} ", end='\r')
         else:
-            print(f"image exist count: {self.TOTAL_EXIST}", end='\r')
+            self.TOTAL_EXIST += 1
+            print(f"image exist count: {self.TOTAL_EXIST} 页数:{page}/{self.API_PAGEALL}", end='\r')
 
     def findDate(self, text):
         try:
@@ -119,5 +120,4 @@ class SpiderBiYing(object):
 
     # 模块运行结束
     def __del__(self):
-        # 后期再更改
         logger.info('SpiderBiYing爬取进程运行结束')

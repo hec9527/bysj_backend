@@ -16,8 +16,8 @@
 import requests
 import json
 from re import sub
-from lib.dao import DBS
-from lib.logger import logger
+from lib.spider.dao import DBS
+from lib.spider.logger import logger
 
 
 class Spider360(object):

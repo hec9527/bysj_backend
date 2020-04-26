@@ -17,8 +17,8 @@ import requests
 from datetime import date, timedelta
 from time import sleep
 from json import loads
-from lib.dao import DBS
-from lib.logger import logger
+from lib.spider.dao import DBS
+from lib.spider.logger import logger
 
 
 class SpiderJinShan(object):
@@ -65,7 +65,7 @@ class SpiderJinShan(object):
             print(f'fetched data: {self.TOTAL}', end='\r')
         else:
             self.TOTAL_EXIST += 1
-            print(f"fetch exist daat: {self.TOTAL}\n")
+            print(f"fetch exist data: {self.TOTAL_EXIST}", end='\r')
 
     # 获取最近7天的日期字符串
     def dayDateRange(self):
