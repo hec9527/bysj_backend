@@ -8,6 +8,7 @@
 """
 from sys import argv
 from time import time
+from threading import Thread
 # 日志模块
 from lib.spider.logger import logger
 # 360壁纸爬取模块
@@ -29,8 +30,6 @@ class Spider(object):
         self.list_process = []
         # 相关爬虫模块
         self.list_lib = self.filterSpider()
-        logger.info(f'爬虫进程：{self.list_lib}')
-        return
         # 启动爬虫进程
         self.set_up()
 
@@ -47,13 +46,18 @@ class Spider(object):
         return lis
 
     def set_up(self):
+        logger.info(f'爬虫进程：{self.list_lib}')
         for lib in self.list_lib:
-            # TODO 改成多线程模式，主线程守护子线程，子线程全部关闭之后结束主线程
-            self.list_process.append(lib())
+            self.list_process.append(Thread(target=lib))
+        for task in self.list_process:
+            task.setDaemon(True)
+            task.start()
+        for task in self.list_process:
+            task.join()
 
     def __del__(self):
         during_time = time() - float(self.START_TIME)
-        logger.info('爬虫模块运行结束, 耗时：%fs',during_time)
+        logger.info('爬虫模块运行结束, 耗时：%fs', during_time)
 
 
 # start
