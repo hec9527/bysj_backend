@@ -2,6 +2,30 @@
 
 > 很调皮的开发日志，记录以下自己的开发历程
 
+## Project setup
+
+```shell
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```shell
+npm run dev
+```
+
+### Compiles and minifies for production
+
+```shell
+npm run build
+```
+
+### Lints and fixes files
+
+```shell
+npm run lint
+```
+
 ## 2019-10-14
 
 - 毕业设计立项，`new folder`
