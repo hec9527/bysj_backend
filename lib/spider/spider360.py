@@ -95,6 +95,7 @@ class Spider360(object):
             for cate in data:
                 cid, category, start, count, fetched, total = cate['id'], cate[
                     'name'], 0, 150, 0, 0
+                logger.debug(f"开始获取<{category}>数据")
                 while True:
                     # cid   start    count
                     url = self.API_HOST + self.API_ARG.replace(
@@ -138,12 +139,15 @@ class Spider360(object):
 
     # 获取文本内容
     def getText(self, url, header):
-        res = requests.get(url, headers=header)
-        if 200 <= res.status_code <= 300:
-            res.encoding = res.apparent_encoding
-            return res.text
-        else:
-            return ''
+        try:
+            res = requests.get(url, headers=header)
+            if 200 <= res.status_code <= 300:
+                res.encoding = res.apparent_encoding
+                return res.text
+            else:
+                return ''
+        except Exception as e:
+            logger.error(e)
 
     # 模块运行结束
     def __del__(self):

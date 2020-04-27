@@ -34,15 +34,16 @@ class Spider(object):
         self.set_up()
 
     def filterSpider(self):
-        lis = [Spider360, SpiderBiYing, SpiderJinShan]
-        if len(argv) <= 1 or 'all' in argv:
+        # Spider360   SpiderBiYing  SpiderJinShan
+        lis = []
+        if len(argv) <= 1:
             return lis
-        elif "360" not in argv:
-            lis.remove(Spider360)
-        elif 'bing' not in argv:
-            lis.remove(SpiderBiYing)
-        elif 'jinshan' not in argv:
-            lis.remove(SpiderJinShan)
+        elif "360" in argv or 'all' in argv:
+            lis.append(Spider360)
+        elif 'bing' in argv or 'all' in argv:
+            lis.append(SpiderBiYing)
+        elif 'jinshan' in argv or 'all' in argv:
+            lis.append(SpiderJinShan)
         return lis
 
     def set_up(self):

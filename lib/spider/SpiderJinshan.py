@@ -42,6 +42,7 @@ class SpiderJinShan(object):
 
     def parseLink(self):
         for d in self.DATE_LIS:
+            logger.info(f'获取{d}的数据')
             url = self.API_HOST + d
             res = requests.get(url, headers=self.HEADER)
             if res.status_code == 200:
