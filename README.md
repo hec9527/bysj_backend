@@ -14,18 +14,6 @@ npm install
 npm run dev
 ```
 
-### Compiles and minifies for production
-
-```shell
-npm run build
-```
-
-### Lints and fixes files
-
-```shell
-npm run lint
-```
-
 ## 2019-10-14
 
 - 毕业设计立项，`new folder`
@@ -39,7 +27,7 @@ npm run lint
 - 先安装docker
 
 ``` shell
-    docker run  -p 3306:3306 --name mymysql -v "D:\mysql\conf":"/etc/mysql/conf.d" -v "D:\mysql\logs":"/logs" -v "D:\mysql\data":"/var/lib/mysql" -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest -C utf8 --collation-server=utf8_bin b8fd9553f1f0
+docker run  -p 3306:3306 --name mymysql -v "D:\mysql\conf":"/etc/mysql/conf.d" -v "D:\mysql\logs":"/logs" -v "D:\mysql\data":"/var/lib/mysql" -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest -C utf8 --collation-server=utf8_bin b8fd9553f1f0
 ```
 
 - -p 3306:3306：将容器的 3306 端口映射到主机的 3306 端口。
@@ -75,5 +63,10 @@ npm run lint
 
 ## 2019-11-13
 
-- 寝室断水、断网了，看来似乎没必要继续续费了。难搞，现在毕业设计也不好写了，很多需要网的都做不了
+- 寝室断水、断网了。难搞，现在毕业设计也不好写了，很多需要网的都做不了
 - node-schedule  设置定时任务的工具包
+
+## 2020-5-4
+
+- 终于接近尾声了
+- 毕业设计最后一个提交，封仓库了！！！！！
