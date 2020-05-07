@@ -70,3 +70,24 @@ docker run  -p 3306:3306 --name mymysql -v "D:\mysql\conf":"/etc/mysql/conf.d" -
 
 - 终于接近尾声了
 - 毕业设计最后一个提交，封仓库了！！！！！
+
+## 2020-5-7
+
+- 真香~~~~ 我又来提交了
+- 本次提交增加了前端编译之后的代码，修复了数据库初始化的问题
+- 增加了数据库备份出来的数据
+- 这次是真的最后一次提交了........
+
+## 写在最后
+
+### 数据库备份
+
+```shell
+mysqldump -hlocalhost -p3306 -uroot -p --databases <数据库名> > ./backup.sql
+```
+
+### 数据库导入
+
+```shell
+mysql -uroot -p -hlocalhost < ./backup.sql
+```
