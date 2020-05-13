@@ -14,6 +14,24 @@ npm install
 npm run dev
 ```
 
+### pm2 进程守护
+
+```shell
+# 新增shell脚本 使用pm2启动服务
+npm run pm2
+```
+
+#### pm2 常用参数
+
+| 参数                             | 说明                |
+| :------------------------------- | :------------------ |
+| logs                             | 打印后台任务的日志  |
+| ls                               | 查看pm2守护进程信息 |
+| stop [id\|name\|namespace]       | 关闭进程            |
+| restart [id\|name\|namespace]    | 重启进程            |
+| start [option] [name\|namespace] | 启动进程            |
+| kill                             | 退出 pm2 进程       |
+
 ## 2019-10-14
 
 - 毕业设计立项，`new folder`

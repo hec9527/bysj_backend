@@ -22,11 +22,14 @@
         "request": "^2.88.2",
         "vue": "^2.6.10"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "pm2": "^4.4.0"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "node index.js",
-        "start": "npm run dev"
+        "start": "npm run dev",
+        "pm2": "pm2 startOrRestart ecosystem.config.js"
     },
     "author": "",
     "license": "ISC"
