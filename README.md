@@ -5,7 +5,13 @@
 ## Project setup
 
 ```shell
+# 安装node依赖
 npm install
+
+# 安装python依赖
+pip3 install -r requirements.txt
+
+# 安装配置数据库
 ```
 
 ### Compiles and hot-reloads for development
@@ -41,18 +47,17 @@ npm run pm2
 ## 2019-10-15
 
 - 写了hello world就不知道干啥了
-- 先写数据库嘛（采用docker）
-- 先安装docker
+- 试试 docker
 
 ``` shell
 docker run  -p 3306:3306 --name mymysql -v "D:\mysql\conf":"/etc/mysql/conf.d" -v "D:\mysql\logs":"/logs" -v "D:\mysql\data":"/var/lib/mysql" -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest -C utf8 --collation-server=utf8_bin b8fd9553f1f0
 ```
 
-- -p 3306:3306：将容器的 3306 端口映射到主机的 3306 端口。
-- -v D:\mysql\conf:/etc/mysql/conf.d：将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。
-- -v D:\mysql\logs:/logs：将主机当前目录下的 logs 目录挂载到容器的 /logs。
-- -v D:\mysql\data:/var/lib/mysql ：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
-- -e MYSQL_ROOT_PASSWORD=123456：初始化 root 用户的密码。
+- `-p 3306:3306`：将容器的 3306 端口映射到主机的 3306 端口
+- `-v D:\mysql\conf:/etc/mysql/conf.d`：将主机当前目录下的 conf/my.cnf 挂载到容器的` /etc/mysql/my.cnf`
+- `-v D:\mysql\logs:/logs`：将主机当前目录下的 logs 目录挂载到容器的 /logs
+- `-v D:\mysql\data:/var/lib/mysql`：将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 
+- `-e MYSQL_ROOT_PASSWORD=123456`：初始化 root 用户的密码
 
 ## 2019-10-16
 
