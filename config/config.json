@@ -1,18 +1,18 @@
 {
-  "db_host": "localhost",
-  "db_user": "root",
-  "db_passwd": "123abc!@#",
-  "db_database": "bysj",
-  "db_charset": "utf8mb4",
-  "spiderAll": ["spider360"],
-  "spiderNews": [
-    {
-      "2020-4-14": {
-        "spider360": "ok",
-        "spiderjinshan": "ok",
-        "spiderBiying": "ok"
-      }
-    }
-  ],
-  "imageIdentify": ["2020-4-14"]
+    "db_host": "0.0.0.0",
+    "db_user": "root",
+    "db_passwd": "123abc!@#",
+    "db_database": "bysj",
+    "db_charset": "utf8mb4",
+    "spiderAll": ["spider360"],
+    "spiderNews": [
+        {
+            "2020-4-14": {
+                "spider360": "ok",
+                "spiderjinshan": "ok",
+                "spiderBiying": "ok"
+            }
+        }
+    ],
+    "imageIdentify": ["2020-4-14"]
 }
